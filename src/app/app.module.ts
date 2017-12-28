@@ -7,28 +7,36 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { AddNewPageModule } from '../pages/add-new/add-new.module';
+import { CantineMainPage } from '../pages/cantine-main/cantine-main';
+import { CantinesServiceProvider } from '../providers/cantines-service/cantines-service';
+import { MapPage } from '../pages/map/map'
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage, 
+    CantineMainPage, 
+    MapPage
   ],
   imports: [
     BrowserModule,
-    AddNewPageModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    HttpModule, 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
+    CantineMainPage, 
+    MapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CantinesServiceProvider, 
   ]
 })
 export class AppModule {}

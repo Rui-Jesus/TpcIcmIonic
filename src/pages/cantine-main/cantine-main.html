@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons right>
+      <button ion-button (click)="refreshPage()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title> {{title}} </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--> List of the foods <-->
+<ion-content padding>
+    
+  <p class="myTitle"><strong>Cantina:</strong> {{canteen}}</p>
+  <p><strong>Dia:</strong> {{weekday}}</p>
+  <p><strong>Data: </strong> {{todayDate}}</p>
+  
+  <div class="divSeperate"></div>
+
+  <ion-list no-lines>
+    <h2></h2>
+    <h4>Almoço</h4>
+    <!--show this if there are no items in the list-->
+    <ion-item [hidden]="c_items.length > 0">
+      <p><strong>Informação não disponível (pode ser problemas de conexão ou problemas na API</strong></p>
+    </ion-item>
+    <!--Display the current conditions data we have -->
+    <ion-item *ngFor="let c_item of c_items">
+      <p><strong>{{c_item.name}}:</strong></p>
+      <p class="foodEntry">{{c_item.value}}</p>
+    </ion-item>  
+  </ion-list>
+  
+  <div class="line"></div>
+
+  <ion-list no-lines>
+      <h2></h2>
+      <h4>Jantar</h4>
+      <!--show this if there are no items in the list-->
+      <ion-item [hidden]="d_items.length > 0">
+        <p><strong>Informação não disponível</strong></p>
+      </ion-item>
+      <!--Display the current conditions data we have -->
+      <ion-item *ngFor="let d_item of d_items">
+        <p><strong>{{d_item.name}}:</strong></p>
+        <p class="foodEntry">{{d_item.value}}</p>
+      </ion-item>  
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer">ICM - Ionic 3</ion-title>
+  </ion-toolbar>
+</ion-footer>

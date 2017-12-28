@@ -1,0 +1,36 @@
+page-cantine-main {
+
+    .myTitle{
+        font-size: 20px; 
+        font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    }
+
+    .myItem{
+        margin-left: 20%; 
+    }
+
+    .foodEntry{ 
+        font-size: 65%;  
+    }
+
+    .footer{
+        font-size: 10% !important; 
+        font-family: Arial, Helvetica, sans-serif; 
+        font-style: italic; 
+    }
+
+    .line{
+        height: 2px; 
+        opacity: 0.6; 
+        width: 100%; 
+        background-color: aqua;  
+        display: block; 
+    }
+
+    .divSeperate{
+        height: 15px; 
+    }
+
+}
+
+

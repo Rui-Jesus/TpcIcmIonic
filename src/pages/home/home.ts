@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AddNewPage } from '../add-new/add-new';
+import { MapPage } from '../map/map'
 import { Storage } from '@ionic/storage';
+import { CantineMainPage } from '../cantine-main/cantine-main';
 
 @Component({
   selector: 'page-home',
@@ -20,8 +21,24 @@ export class HomePage {
     });
   }
 
-  addNewNote () {
-    this.navCtrl.push(AddNewPage);
+  goToMap() {
+    console.log("Going to map"); 
+    this.navCtrl.push(MapPage); 
+  }
+
+  /* Navigation methods for the 3 types of cantines
+  Depending on the one the user choses, we pass different parameters */ 
+
+  loadCantineSantiago() {
+    this.navCtrl.push(CantineMainPage, { cantine: 'Santiago'});
+  }
+
+  loadCantineCrasto() {
+    this.navCtrl.push(CantineMainPage, { cantine: 'Crasto'});
+  }
+
+  loadCantineBar() {
+    this.navCtrl.push(CantineMainPage, { cantine: 'Snack-bar'});
   }
 
 }

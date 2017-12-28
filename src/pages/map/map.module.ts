@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AddNewPage } from './add-new';
+import { MapPage } from './map';
 
 @NgModule({
   declarations: [
-    AddNewPage,
+    MapPage,
   ],
   imports: [
-    IonicPageModule.forChild(AddNewPage),
+    IonicPageModule.forChild(MapPage),
   ],
 })
-export class AddNewPageModule {}
+export class MapPageModule {}

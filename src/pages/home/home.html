@@ -1,25 +1,53 @@
+
 <ion-header>
   <ion-navbar>
     <ion-title>
-      MyToDo!
+      EmentasUA
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  
-  <ion-card *ngFor="let note of notes">
-    <ion-card-header>
-      {{ note.title }}
-    </ion-card-header>
-    <ion-card-content>
-      {{ note.content }}
-    </ion-card-content>
-  </ion-card>
 
-  <ion-fab right bottom>
-    <button ion-fab (click)="addNewNote()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="santiago.jpg">
+        </ion-thumbnail>
+        <h3>Refeitório Santiago</h3>
+        <button ion-button clear item-end (click)="loadCantineSantiago()">Refeições</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="crasto.jpeg">
+        </ion-thumbnail>
+        <h3>Refeitório Crasto</h3>
+        <button ion-button clear item-end (click)="loadCantineCrasto()">Refeições</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="snackBar.jpg">
+        </ion-thumbnail>
+        <h3>Snack bar</h3>
+        <button ion-button clear item-end (click)="loadCantineBar()">Refeições</button>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button outline icon-right (click)="goToMap()">
+    Ver localizações
+    <ion-icon name="map"></ion-icon>
+  </button>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer">ICM - Ionic 3</ion-title>
+  </ion-toolbar>
+</ion-footer>
